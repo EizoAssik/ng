@@ -42,4 +42,14 @@ def fold(func, iterabel):
 
 
 def foldr(func, iterable):
+    """
+    Fork of foldr1 in Haskell
+    """
     return fold(func, reversed(iterable))
+
+
+def zipWith(func, *args):
+    """
+    Fork of zipWith in Haskell, returns a map object
+    """
+    return map(lambda x: func(*x), zip(*args))
