@@ -53,3 +53,11 @@ def zipWith(func, *args):
     Fork of zipWith in Haskell, returns a map object
     """
     return map(lambda x: func(*x), zip(*args))
+
+
+def curry(func, *args):
+    return func(args)
+
+
+def uncurry(func, args):
+    return func(*args)
