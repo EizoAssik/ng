@@ -1,7 +1,11 @@
 # encoding=utf8
+from functools import reduce as _reduce
 
 
 class composition:
+    """
+    works like DOT (.) in Haskell
+    """
     def __init__(self, *args):
         if len(args) < 1:
             raise ValueError(
@@ -17,6 +21,9 @@ class composition:
         return v
 
 
+fold = _reduce
+# This works, but reduce is implemented in C.
+"""
 def fold(func, iterabel):
     fold_iter = iter(iterabel)
     try:
@@ -31,6 +38,7 @@ def fold(func, iterabel):
     for value in fold_iter:
         result = func(result, value)
     return result
+"""
 
 
 def foldr(func, iterable):
